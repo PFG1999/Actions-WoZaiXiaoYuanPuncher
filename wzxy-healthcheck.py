@@ -163,7 +163,7 @@ class WoZaiXiaoYuanPuncher:
             notifyToken = os.environ["SCT_KEY"]
             url = "https://sctapi.ftqq.com/{}.send"
             body = {
-                "title": "⏰ 我在校园打卡结果通知",
+                "title": "⏰ PFG1999的我在校园打卡结果通知",
                 "desp": "打卡项目：健康打卡\n\n打卡情况：{}\n\n打卡时间：{}".format(
                     notifyResult, notifyTime
                 ),
@@ -184,7 +184,7 @@ class WoZaiXiaoYuanPuncher:
             )
             msg = {
                 "token": notifyToken,
-                "title": "⏰ 我在校园打卡结果通知",
+                "title": "⏰ PFG1999的我在校园打卡结果通知",
                 "content": content,
                 "template": "json",
             }
@@ -201,7 +201,7 @@ class WoZaiXiaoYuanPuncher:
             GOBOT_URL = os.environ["GOBOT_URL"]
             GOBOT_TOKEN = os.environ["GOBOT_TOKEN"]
             GOBOT_QQ = os.environ["GOBOT_QQ"]
-            url = f'{GOBOT_URL}?access_token={GOBOT_TOKEN}&{GOBOT_QQ}&message=⏰ 我在校园打卡结果通知\n---------\n\n打卡项目：健康打卡\n\n打卡情况：{notifyResult}\n\n打卡时间: {notifyTime}'
+            url = f'{GOBOT_URL}?access_token={GOBOT_TOKEN}&{GOBOT_QQ}&message=⏰ PFG1999的我在校园打卡结果通知\n---------\n\n打卡项目：健康打卡\n\n打卡情况：{notifyResult}\n\n打卡时间: {notifyTime}'
             r = requests.get(url).json()
             if r["status"] == "ok":
                 print("消息经 go-cqhttp 推送成功！")
@@ -226,7 +226,7 @@ class WoZaiXiaoYuanPuncher:
             data = {
                 "msgtype": "text",
                 "text": {
-                    "content": f"⏰ 我在校园打卡结果通知\n---------\n打卡项目：健康打卡\n\n打卡情况：{notifyResult}\n\n打卡时间: {notifyTime}"
+                    "content": f"⏰ PFG1999的我在校园打卡结果通知\n---------\n打卡项目：健康打卡\n\n打卡情况：{notifyResult}\n\n打卡时间: {notifyTime}"
                 },
             }
             r = requests.post(url=url, data=json.dumps(data), headers=headers, timeout=15).json()
@@ -238,7 +238,7 @@ class WoZaiXiaoYuanPuncher:
         if os.environ.get('BARK_TOKEN'):
             # bark 推送
             notifyToken = os.environ["BARK_TOKEN"]
-            req = "{}/{}/{}".format(notifyToken, "⏰ 我在校园打卡（健康打卡）结果通知", notifyResult)
+            req = "{}/{}/{}".format(notifyToken, "⏰ PFG1999的我在校园打卡（健康打卡）结果通知", notifyResult)
             requests.get(req)
             print("消息经bark推送成功")
         if os.environ.get("MIAO_CODE"):
